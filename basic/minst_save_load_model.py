@@ -95,6 +95,8 @@ model.fit(train_images,
 latest = tf.train.latest_checkpoint(checkpoint_dir)
 print(latest)
 
+# the default TensorFlow format only saves the 5 most recent checkpoints.
+
 # Create a new model instance
 model = create_model()
 
