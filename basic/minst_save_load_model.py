@@ -65,6 +65,7 @@ loss, acc = model.evaluate(test_images, test_labels, verbose=2)
 print("Restored model, accuracy: {:5.2f}%".format(100 * acc))
 
 # Checkpoint callback options
+
 # Include the epoch in the file name (uses `str.format`)
 checkpoint_path = "training_2/cp-{epoch:04d}.ckpt"
 checkpoint_dir = os.path.dirname(checkpoint_path)
@@ -108,6 +109,7 @@ loss, acc = model.evaluate(test_images, test_labels, verbose=2)
 print("Restored model, accuracy: {:5.2f}%".format(100 * acc))
 
 # Manually save weights
+
 # Save the weights
 model.save_weights('./checkpoints/my_checkpoint')
 
@@ -120,6 +122,8 @@ model.load_weights('./checkpoints/my_checkpoint')
 # Evaluate the model
 loss, acc = model.evaluate(test_images, test_labels, verbose=2)
 print("Restored model, accuracy: {:5.2f}%".format(100 * acc))
+
+# Save the entire model including model design
 
 # SavedModel format
 # Create and train a new model instance.
@@ -139,7 +143,8 @@ print('Restored model, accuracy: {:5.2f}%'.format(100 * acc))
 
 print(new_model.predict(test_images).shape)
 
-# HDF5 format
+# Save in HDF5 format
+
 # Create and train a new model instance.
 # Create and train a new model instance.
 model = create_model()

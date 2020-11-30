@@ -1,3 +1,5 @@
+# Modified from https://www.tensorflow.org/tutorials/keras/keras_tuner
+# !pip install -q -U keras-tuner
 import tensorflow as tf
 from tensorflow import keras
 

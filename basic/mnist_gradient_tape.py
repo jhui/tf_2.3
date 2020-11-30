@@ -6,8 +6,8 @@ from tensorflow.keras import Model
 
 mnist = tf.keras.datasets.mnist
 
-#  load 60K images for training & 10K for testing
-#  rescale MNIST pixel values to 0 .. 1.0
+# load 60K images for training & 10K for testing
+# normalize pixel values between 0 and 1
 (x_train, y_train), (x_test, y_test) = mnist.load_data()
 x_train, x_test = x_train / 255.0, x_test / 255.0
 
