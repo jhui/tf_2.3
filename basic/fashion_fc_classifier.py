@@ -16,6 +16,7 @@ test_images = test_images / 255.0
 print(f"train images shape: {train_images.shape}")
 print(f"train images size: {len(train_images)}")
 
+# plot the first image in the dataset
 plt.figure()
 plt.imshow(train_images[0])
 plt.colorbar()
@@ -24,6 +25,7 @@ plt.show()
 class_names = ['T-shirt/top', 'Trouser', 'Pullover', 'Dress', 'Coat',
                'Sandal', 'Shirt', 'Sneaker', 'Bag', 'Ankle boot']
 
+# plot 5x5 images with labels
 plt.figure(figsize=(10, 10))
 for i in range(25):
     plt.subplot(5, 5, i + 1)
@@ -54,6 +56,7 @@ label = np.argmax(predictions[0])
 print(f"Predicted label & ground truth: {label}, {test_labels[0]}")
 
 
+# plot the image with the predicted label & ground truth
 def plot_image(i, predictions_array, true_label, img):
     true_label, img = true_label[i], img[i]
 
@@ -71,6 +74,7 @@ def plot_image(i, predictions_array, true_label, img):
                color=color)
 
 
+# plot a bar chart for the predicted label
 def plot_value_array(i, predictions_array, true_label):
     true_label = true_label[i]
     plt.xticks(range(10))

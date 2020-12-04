@@ -1,3 +1,4 @@
+# Modified from https://www.tensorflow.org/tutorials/keras/text_classification
 import matplotlib.pyplot as plt
 import os
 import re

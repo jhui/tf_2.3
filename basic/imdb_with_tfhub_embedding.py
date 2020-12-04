@@ -1,5 +1,5 @@
+# Modified from https://www.tensorflow.org/tutorials/keras/text_classification_with_hub
 import os
-import numpy as np
 
 import tensorflow as tf
 import tensorflow_hub as hub
