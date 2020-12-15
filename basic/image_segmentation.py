@@ -17,7 +17,7 @@ def normalize(input_image, input_mask):
     return input_image, input_mask
 
 
-#@tf.function
+@tf.function
 def load_image_train(datapoint):
     input_image = tf.image.resize(datapoint['image'], (128, 128))
     input_mask = tf.image.resize(datapoint['segmentation_mask'], (128, 128))
