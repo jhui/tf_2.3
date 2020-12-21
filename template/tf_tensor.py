@@ -1,4 +1,5 @@
 import tensorflow as tf
+import numpy as np
 
 a = tf.constant(
         [[1., 2.],
@@ -46,6 +47,8 @@ t = tf.zeros([1, 200, 200, 3])
 # float32, range: [0, 1)
 t = tf.random.uniform([1, 5, 2])
 
+t = tf.random.normal((2, 3))
+
 inputs = tf.range(10.)[:, None]                  # shape (10, 1)
 labels = inputs * 5. + tf.range(5.)[None, :]     # shape (10, 5)
 
@@ -55,3 +58,11 @@ data = [
 ]
 # [batch, time, features] -> [time, batch, features]
 result = tf.transpose(data, [1, 0, 2])
+
+# a = tf.ones([3, 2])
+# b = tf.zeros([3, 2])
+a = np.zeros((3, 2))
+b = np.ones((3, 2))
+
+r = tf.concat([a, b], axis=0)
+
