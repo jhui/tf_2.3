@@ -10,3 +10,5 @@ checkpoints/my_checkpoint.data-00000-of-00001
 .idea/inspectionProfiles/Project_Default.xml
 .idea/tf_2.iml
 .idea/workspace.xml
+temp/sandbox2.py
+temp/sandbox.py
