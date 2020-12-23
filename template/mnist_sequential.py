@@ -19,6 +19,7 @@ model = keras.Sequential(
         layers.Conv2D(32, 3, activation="relu"),
         layers.Flatten(),
         layers.Dense(128, activation="relu"),
+        layers.Dropout(0.2),
         layers.Dense(10),
     ]
 )
