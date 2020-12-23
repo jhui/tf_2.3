@@ -31,7 +31,6 @@ model.compile(
 
 model.fit(x_train, y_train, epochs=10, batch_size=64, validation_split=0.1)
 
-
 test_loss, test_accuracy = model.evaluate(x_test, y_test, verbose=2)
 print("Test accuracy: ", test_accuracy)
 
@@ -39,6 +38,15 @@ predictions = model.predict(x_test[:10])
 label = np.argmax(predictions[0])
 
 print("label ", label)
+
+probabilities = tf.nn.softmax(predictions).numpy()
+
+probability_model = tf.keras.Sequential([
+    model,
+    tf.keras.layers.Softmax()
+])
+
+results = probability_model(x_test[:5])
 
 # model.fit(np.random.randint(256, size=(1000, 28, 28)), np.random.randint(10, size=(1000, 1)),
 #          epochs=1, batch_size=128, validation_split=0.1)
