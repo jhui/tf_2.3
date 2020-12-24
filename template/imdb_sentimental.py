@@ -69,6 +69,7 @@ vectorize_layer.adapt(train_text)
 
 
 def vectorize_text(text, label):
+  # shape (batch size,) to (batch size, 1)
   text = tf.expand_dims(text, -1)
   return vectorize_layer(text), label
 
@@ -144,7 +145,8 @@ export_model = tf.keras.Sequential([
 ])
 
 export_model.compile(
-    loss=losses.BinaryCrossentropy(from_logits=False), optimizer="adam", metrics=['accuracy']
+    loss=losses.BinaryCrossentropy(from_logits=False),
+                optimizer="adam", metrics=['accuracy']
 )
 
 # Test it with `raw_test_ds`, which yields raw strings
