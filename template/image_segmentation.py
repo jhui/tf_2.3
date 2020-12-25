@@ -91,6 +91,8 @@ down_stack = tf.keras.Model(inputs=base_model.input, outputs=layers)
 
 down_stack.trainable = False
 
+from tensorflow_examples.models.pix2pix import pix2pix
+
 up_stack = [
     pix2pix.upsample(512, 3),  # 4x4 -> 8x8
     pix2pix.upsample(256, 3),  # 8x8 -> 16x16
